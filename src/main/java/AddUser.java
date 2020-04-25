@@ -7,17 +7,33 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 
+
+  import java.sql.Connection;
+  import java.sql.PreparedStatement;
+  import java.sql.ResultSet;
+
+
 /**
  *
  * @author Nimra Sajid
  */
 public class AddUser extends javax.swing.JFrame {
+    
+     Connection con;
+    PreparedStatement pst;
+    ResultSet rs;
+    
 
     /**
      * Creates new form AddUser
      */
     public AddUser() {
         initComponents();
+    }
+    
+     public AddUser(String name) {
+        initComponents();
+        jTextField1.setText(name);
     }
 
     /**
@@ -227,6 +243,11 @@ public class AddUser extends javax.swing.JFrame {
 
     private void Add1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add1ActionPerformed
         
+       
+        
+        
+        
+        
          if(jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextField3.getText().equals("")|| jTextField5.getText().equals("") || jTextField4.getText().contains("@") && !jTextField4.getText().contains("@") )
        {
            JOptionPane.showMessageDialog(null, "One of the required field is empty!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -237,6 +258,10 @@ public class AddUser extends javax.swing.JFrame {
    
      
          JOptionPane.showMessageDialog(this,"User is Added");
+         
+         
+         
+         
         
         
     }//GEN-LAST:event_Add1ActionPerformed
